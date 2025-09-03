@@ -1,0 +1,226 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+}
+
+header h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+header p {
+    color: #6c757d;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Filters section */
+.filters-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+}
+
+.filters-section:empty::before {
+    content: "Filter controls will be added here";
+    font-style: italic;
+}
+
+/* Table container */
+.table-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow-x: auto;
+    overflow-y: visible;
+}
+
+/* Table styles */
+.opportunities-table {
+    width: 100%;
+    min-width: 1200px;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.opportunities-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.opportunities-table th {
+    padding: 15px 12px;
+    text-align: left;
+    font-weight: 600;
+    position: relative;
+    white-space: nowrap;
+}
+
+.opportunities-table th.sortable {
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+.opportunities-table th.sortable:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.opportunities-table th.sortable::after {
+    content: '↕️';
+    margin-left: 8px;
+    opacity: 0.6;
+    font-size: 0.8rem;
+}
+
+.opportunities-table tbody tr {
+    border-bottom: 1px solid #e9ecef;
+    transition: background-color 0.2s ease;
+}
+
+.opportunities-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.opportunities-table tbody tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+
+.opportunities-table tbody tr:nth-child(even):hover {
+    background-color: #f1f3f4;
+}
+
+.opportunities-table td {
+    padding: 12px;
+    vertical-align: top;
+    border-right: 1px solid #f1f3f4;
+}
+
+.opportunities-table td:last-child {
+    border-right: none;
+}
+
+/* Category badges */
+.opportunities-table td:nth-child(2) {
+    font-weight: 600;
+}
+
+.opportunities-table tr[data-category="Job"] td:nth-child(2) {
+    color: #28a745;
+}
+
+.opportunities-table tr[data-category="Internship"] td:nth-child(2) {
+    color: #007bff;
+}
+
+.opportunities-table tr[data-category="Volunteering"] td:nth-child(2) {
+    color: #dc3545;
+}
+
+.opportunities-table tr[data-category="Club"] td:nth-child(2) {
+    color: #fd7e14;
+}
+
+/* Hourly rate styling */
+.opportunities-table td:nth-child(4) {
+    font-weight: 600;
+    color: #28a745;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .opportunities-table {
+        font-size: 0.8rem;
+    }
+    
+    .opportunities-table th,
+    .opportunities-table td {
+        padding: 8px 6px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .opportunities-table {
+        min-width: 1200px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+}
+
+/* Loading and interactive states */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Future JavaScript classes */
+.filtered-out {
+    display: none;
+}
+
+.sort-asc::after {
+    content: '↑';
+    color: #fff;
+    font-weight: bold;
+}
+
+.sort-desc::after {
+    content: '↓';
+    color: #fff;
+    font-weight: bold;
+}

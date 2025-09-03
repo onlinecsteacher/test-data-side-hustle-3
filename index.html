@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teen Opportunities Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Teen Opportunities Dashboard</h1>
+            <p>Explore various opportunities for teenagers including jobs, internships, volunteering, and clubs</p>
+        </header>
+
+        <div class="filters-section" id="filters">
+            <div class="search-container">
+                <label for="search-input">Search Technical Skills:</label>
+                <input type="text" id="search-input" placeholder="Enter keyword to search technical skills..." />
+                <button id="filter-button">Filter</button>
+                <button id="clear-button">Clear Filter</button>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table id="opportunities-table" class="opportunities-table">
+                <thead>
+                    <tr>
+                        <th data-column="title" class="sortable">Title</th>
+                        <th data-column="category" class="sortable">Category Type</th>
+                        <th data-column="location" class="sortable">Location / Accessibility</th>
+                        <th data-column="rate" class="sortable">Hourly Rate</th>
+                        <th data-column="barrier" class="sortable">Barrier to Entry</th>
+                        <th data-column="hours" class="sortable">Hours per Week</th>
+                        <th data-column="people" class="sortable">People Helped</th>
+                        <th data-column="admissions" class="sortable">College Admissions</th>
+                        <th data-column="skills" class="sortable">Technical Skills</th>
+                        <th data-column="benefits" class="sortable">Non-financial Benefits</th>
+                    </tr>
+                </thead>
+                <tbody id="opportunities-tbody">
+                    <tr data-category="Job" data-location="Remote" data-rate="10" data-barrier="Medium" data-hours="15" data-people="15" data-admissions="Medium">
+                        <td>Babysitter</td>
+                        <td>Job</td>
+                        <td>Remote</td>
+                        <td>$10/hour</td>
+                        <td>Medium</td>
+                        <td>15</td>
+                        <td>15</td>
+                        <td>Medium</td>
+                        <td>Creativity</td>
+                        <td>Skill building</td>
+                    </tr>
+                    <tr data-category="Internship" data-location="Remote" data-rate="5" data-barrier="Low" data-hours="19" data-people="33" data-admissions="High">
+                        <td>Lifeguard</td>
+                        <td>Internship</td>
+                        <td>Remote</td>
+                        <td>$5/hour</td>
+                        <td>Low</td>
+                        <td>19</td>
+                        <td>33</td>
+                        <td>High</td>
+                        <td>Collaboration</td>
+                        <td>Skill building</td>
+                    </tr>
+                    <tr data-category="Internship" data-location="Neighborhood" data-rate="15" data-barrier="Low" data-hours="12" data-people="90" data-admissions="High">
+                        <td>Grocery Store Clerk</td>
+                        <td>Internship</td>
+                        <td>Neighborhood</td>
+                        <td>$15/hour</td>
+                        <td>Low</td>
+                        <td>12</td>
+                        <td>90</td>
+                        <td>High</td>
+                        <td>Communication</td>
+                        <td>Mentorship opportunities</td>
+                    </tr>
+                    <tr data-category="Volunteering" data-location="Remote" data-rate="8" data-barrier="Medium" data-hours="16" data-people="83" data-admissions="Medium">
+                        <td>Fast Food Worker</td>
+                        <td>Volunteering</td>
+                        <td>Remote</td>
+                        <td>$8/hour</td>
+                        <td>Medium</td>
+                        <td>16</td>
+                        <td>83</td>
+                        <td>Medium</td>
+                        <td>Communication</td>
+                        <td>Community impact</td>
+                    </tr>
+                    <tr data-category="Club" data-location="Requires transportation" data-rate="0" data-barrier="High" data-hours="16" data-people="149" data-admissions="Low">
+                        <td>Tutor</td>
+                        <td>Club</td>
+                        <td>Requires transportation</td>
+                        <td>$0/hour</td>
+                        <td>High</td>
+                        <td>16</td>
+                        <td>149</td>
+                        <td>Low</td>
+                        <td>Basic Math</td>
+                        <td>Skill building</td>
+                    </tr>
+                    <tr data-category="Internship" data-location="On-campus" data-rate="5" data-barrier="High" data-hours="14" data-people="163" data-admissions="High">
+                        <td>Camp Counselor</td>
+                        <td>Internship</td>
+                        <td>On-campus</td>
+                        <td>$5/hour</td>
+                        <td>High</td>
+                        <td>14</td>
+                        <td>163</td>
+                        <td>High</td>
+                        <td>Collaboration</td>
+                        <td>Creative expression</td>
+                    </tr>
+                    <tr data-category="Internship" data-location="Remote" data-rate="5" data-barrier="Medium" data-hours="14" data-people="142" data-admissions="Low">
+                        <td>Dog Walker</td>
+                        <td>Internship</td>
+                        <td>Remote</td>
+                        <td>$5/hour</td>
+                        <td>Medium</td>
+                        <td>14</td>
+                        <td>142</td>
+                        <td>Low</td>
+                        <td>Problem Solving</td>
+                        <td>Letters of recommendation</td>
+                    </tr>
+                    <tr data-category="Internship" data-location="Requires transportation" data-rate="10" data-barrier="Low" data-hours="13" data-people="44" data-admissions="Medium">
+                        <td>Library Assistant</td>
+                        <td>Internship</td>
+                        <td>Requires transportation</td>
+                        <td>$10/hour</td>
+                        <td>Low</td>
+                        <td>13</td>
+                        <td>44</td>
+                        <td>Medium</td>
+                        <td>Public Speaking</td>
+                        <td>Friendship and belonging</td>
+                    </tr>
+                    <tr data-category="Internship" data-location="Remote" data-rate="12" data-barrier="Medium" data-hours="18" data-people="37" data-admissions="Medium">
+                        <td>Student Government</td>
+                        <td>Internship</td>
+                        <td>Remote</td>
+                        <td>$12/hour</td>
+                        <td>Medium</td>
+                        <td>18</td>
+                        <td>37</td>
+                        <td>Medium</td>
+                        <td>Physical Stamina</td>
+                        <td>Mentorship opportunities</td>
+                    </tr>
+                    <tr data-category="Volunteering" data-location="Requires transportation" data-rate="15" data-barrier="Low" data-hours="10" data-people="150" data-admissions="High">
+                        <td>Debate Club</td>
+                        <td>Volunteering</td>
+                        <td>Requires transportation</td>
+                        <td>$15/hour</td>
+                        <td>Low</td>
+                        <td>10</td>
+                        <td>150</td>
+                        <td>High</td>
+                        <td>Organizational Skills</td>
+                        <td>Creative expression</td>
+                    </tr>
+                    <tr data-category="Volunteering" data-location="Neighborhood" data-rate="12" data-barrier="High" data-hours="8" data-people="41" data-admissions="Low">
+                        <td>Theater Crew</td>
+                        <td>Volunteering</td>
+                        <td>Neighborhood</td>
+                        <td>$12/hour</td>
+                        <td>High</td>
+                        <td>8</td>
+                        <td>41</td>
+                        <td>Low</td>
+                        <td>Leadership</td>
+                        <td>Confidence boost</td>
+                    </tr>
+                    <tr data-category="Volunteering" data-location="On-campus" data-rate="15" data-barrier="High" data-hours="3" data-people="121" data-admissions="High">
+                        <td>Art Club</td>
+                        <td>Volunteering</td>
+                        <td>On-campus</td>
+                        <td>$15/hour</td>
+                        <td>High</td>
+                        <td>3</td>
+                        <td>121</td>
+                        <td>High</td>
+                        <td>Basic Math</td>
+                        <td>Friendship and belonging</td>
+                    </tr>
+                    <tr data-category="Job" data-location="Requires transportation" data-rate="12" data-barrier="Low" data-hours="17" data-people="115" data-admissions="High">
+                        <td>Yearbook Committee</td>
+                        <td>Job</td>
+                        <td>Requires transportation</td>
+                        <td>$12/hour</td>
+                        <td>Low</td>
+                        <td>17</td>
+                        <td>115</td>
+                        <td>High</td>
+                        <td>Computer Skills</td>
+                        <td>Teamwork</td>
+                    </tr>
+                    <tr data-category="Internship" data-location="Requires transportation" data-rate="12" data-barrier="High" data-hours="6" data-people="32" data-admissions="Low">
+                        <td>Coding Club</td>
+                        <td>Internship</td>
+                        <td>Requires transportation</td>
+                        <td>$12/hour</td>
+                        <td>High</td>
+                        <td>6</td>
+                        <td>32</td>
+                        <td>Low</td>
+                        <td>Problem Solving</td>
+                        <td>Leadership experience</td>
+                    </tr>
+                    <tr data-category="Volunteering" data-location="Requires transportation" data-rate="12" data-barrier="Medium" data-hours="13" data-people="166" data-admissions="Medium">
+                        <td>Math Team</td>
+                        <td>Volunteering</td>
+                        <td>Requires transportation</td>
+                        <td>$12/hour</td>
+                        <td>Medium</td>
+                        <td>13</td>
+                        <td>166</td>
+                        <td>Medium</td>
+                        <td>Communication</td>
+                        <td>Mentorship opportunities</td>
+                    </tr>
+                    <tr data-category="Internship" data-location="Remote" data-rate="5" data-barrier="Low" data-hours="3" data-people="172" data-admissions="Low">
+                        <td>Science Olympiad</td>
+                        <td>Internship</td>
+                        <td>Remote</td>
+                        <td>$5/hour</td>
+                        <td>Low</td>
+                        <td>3</td>
+                        <td>172</td>
+                        <td>Low</td>
+                        <td>Creativity</td>
+                        <td>Mentorship opportunities</td>
+                    </tr>
+                    <tr data-category="Internship" data-location="Requires transportation" data-rate="5" data-barrier="Low" data-hours="16" data-people="53" data-admissions="High">
+                        <td>Hospital Volunteer</td>
+                        <td>Internship</td>
+                        <td>Requires transportation</td>
+                        <td>$5/hour</td>
+                        <td>Low</td>
+                        <td>16</td>
+                        <td>53</td>
+                        <td>High</td>
+                        <td>Computer Skills</td>
+                        <td>Skill building</td>
+                    </tr>
+                    <tr data-category="Volunteering" data-location="Neighborhood" data-rate="5" data-barrier="Low" data-hours="10" data-people="112" data-admissions="Low">
+                        <td>Food Bank Volunteer</td>
+                        <td>Volunteering</td>
+                        <td>Neighborhood</td>
+                        <td>$5/hour</td>
+                        <td>Low</td>
+                        <td>10</td>
+                        <td>112</td>
+                        <td>Low</td>
+                        <td>Communication</td>
+                        <td>Skill building</td>
+                    </tr>
+                    <tr data-category="Club" data-location="On-campus" data-rate="12" data-barrier="High" data-hours="3" data-people="162" data-admissions="Low">
+                        <td>Community Garden Helper</td>
+                        <td>Club</td>
+                        <td>On-campus</td>
+                        <td>$12/hour</td>
+                        <td>High</td>
+                        <td>3</td>
+                        <td>162</td>
+                        <td>Low</td>
+                        <td>Organizational Skills</td>
+                        <td>Friendship and belonging</td>
+                    </tr>
+                    <tr data-category="Internship" data-location="On-campus" data-rate="0" data-barrier="High" data-hours="9" data-people="64" data-admissions="Medium">
+                        <td>Political Campaign Intern</td>
+                        <td>Internship</td>
+                        <td>On-campus</td>
+                        <td>$0/hour</td>
+                        <td>High</td>
+                        <td>9</td>
+                        <td>64</td>
+                        <td>Medium</td>
+                        <td>Problem Solving</td>
+                        <td>Letters of recommendation</td>
+                    </tr>
+                    <tr data-category="Internship" data-location="Remote" data-rate="12" data-barrier="Low" data-hours="12" data-people="183" data-admissions="Low">
+                        <td>Museum Intern</td>
+                        <td>Internship</td>
+                        <td>Remote</td>
+                        <td>$12/hour</td>
+                        <td>Low</td>
+                        <td>12</td>
+                        <td>183</td>
+                        <td>Low</td>
+                        <td>Public Speaking</td>
+                        <td>Letters of recommendation</td>
+                    </tr>
+                    <tr data-category="Internship" data-location="On-campus" data-rate="12" data-barrier="Medium" data-hours="12" data-people="12" data-admissions="Low">
+                        <td>Research Assistant</td>
+                        <td>Internship</td>
+                        <td>On-campus</td>
+                        <td>$12/hour</td>
+                        <td>Medium</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>Low</td>
+                        <td>Collaboration</td>
+                        <td>Mentorship opportunities</td>
+                    </tr>
+                    <tr data-category="Volunteering" data-location="Remote" data-rate="8" data-barrier="Medium" data-hours="9" data-people="14" data-admissions="Medium">
+                        <td>Social Media Manager for Small Business</td>
+                        <td>Volunteering</td>
+                        <td>Remote</td>
+                        <td>$8/hour</td>
+                        <td>Medium</td>
+                        <td>9</td>
+                        <td>14</td>
+                        <td>Medium</td>
+                        <td>Public Speaking</td>
+                        <td>Confidence boost</td>
+                    </tr>
+                    <tr data-category="Job" data-location="Neighborhood" data-rate="10" data-barrier="High" data-hours="19" data-people="12" data-admissions="Medium">
+                        <td>Music Band Member</td>
+                        <td>Job</td>
+                        <td>Neighborhood</td>
+                        <td>$10/hour</td>
+                        <td>High</td>
+                        <td>19</td>
+                        <td>12</td>
+                        <td>Medium</td>
+                        <td>Leadership</td>
+                        <td>Letters of recommendation</td>
+                    </tr>
+                    <tr data-category="Internship" data-location="On-campus" data-rate="8" data-barrier="Medium" data-hours="2" data-people="92" data-admissions="Medium">
+                        <td>Dance Team</td>
+                        <td>Internship</td>
+                        <td>On-campus</td>
+                        <td>$8/hour</td>
+                        <td>Medium</td>
+                        <td>2</td>
+                        <td>92</td>
+                        <td>Medium</td>
+                        <td>Creativity</td>
+                        <td>Networking</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- JavaScript for sorting and filtering -->
+    <script src="script.js"></script>
+</body>
+</html>
